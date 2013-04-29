@@ -8,13 +8,15 @@
 			<% if @author == post.user.username %>
 				<%= link_to 'Edit', edit_post_path(post) %>
 				<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+				<% else %>
+
+				<%= "" %>
 			 <% end %>
 			 
 	</ul>
 
-	<% else%>
-
-	<p>hola</p>
 <% end %>
+
 
 <%= link_to "Volver", posts_path %>
