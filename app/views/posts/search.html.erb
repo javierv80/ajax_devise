@@ -1,0 +1,14 @@
+
+<h1>Resultado de busqueda</h1>
+
+<% if @posts.any? %>
+	<ul>
+		<%= render @posts%>
+	</ul>
+<% else %>
+    <p>No se encontraron resultados para tu busqueda</p>
+	
+    <%= link_to "Volver", posts_path %> 
+
+
+<% end %>

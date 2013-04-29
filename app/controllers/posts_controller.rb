@@ -86,6 +86,7 @@ class PostsController < ApplicationController
    def your_posts
     @posts = current_user.your_posts(params)
     @post = current_user.posts.all
+    @author = current_user.username
   end
 
   # DELETE /posts/1

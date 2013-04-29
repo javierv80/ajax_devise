@@ -5,13 +5,16 @@
 	<ul>
 		<li>
 			<%= link_to post.title.capitalize, post %> <%=  truncate(post.content, length: 70) %> por <%= post.user.username.capitalize %>
-		</li>
+			<% if @author == post.user.username %>
+				<%= link_to 'Edit', edit_post_path(post) %>
+				<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+			 <% end %>
+			 
 	</ul>
-<% else %>
-    <p>No se encontraron resultados para tu busqueda</p>
-	
 
+	<% else%>
 
+	<p>hola</p>
 <% end %>
 
 <%= link_to "Volver", posts_path %>
