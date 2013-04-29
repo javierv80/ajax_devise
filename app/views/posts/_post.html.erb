@@ -6,7 +6,7 @@
 <% if @posts.any? %>
 	<ul>
 		<li>
-			<%= link_to post.title.capitalize, post %> <%=  truncate(post.content, length: 140) %>
+			<%= link_to post.title.capitalize, post %> <%=  truncate(post.content, length: 140) %> por <%= post.user.username.capitalize %>
 		</li>
 	</ul>
 <% else %>
