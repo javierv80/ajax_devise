@@ -12,6 +12,7 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
       format.js
     end
+
   end
 
   def search
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   # POST /posts
@@ -69,7 +70,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -80,6 +81,11 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+   def your_posts
+    @posts = current_user.your_posts(params)
+    @post = current_user.posts.all
   end
 
   # DELETE /posts/1

@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
 
+  def your_posts(params)
+    posts
+  end
+
 end

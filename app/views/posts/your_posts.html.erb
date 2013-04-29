@@ -1,0 +1,13 @@
+<h1>Mis Preguntas</h1>
+
+<% if @posts.any? %>
+	<ul>
+		<%= render @posts	 %>
+	</ul>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+	<p>No has realizado ningun post aun</p>
+<% end %>

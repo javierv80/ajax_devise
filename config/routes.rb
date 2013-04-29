@@ -4,7 +4,7 @@ Gemas::Application.routes.draw do
   resources :posts
 
    match '/search', to: 'posts#search'
-
+   match '/your_posts', to: 'posts#your_posts'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
